@@ -16,4 +16,27 @@ transactions.get("/:id", (req, res)=>{
 }
 })
 
+transactions.post("/", (req, res)=>{
+    console.log('body', req.body)
+    const {body} = req
+    transactionsArray.push(body)
+    const newId = transactionsArray.length-1
+    res.json(transactionsArray[newId])
+    // res.json(transactionsArray)
+})
+
+transactions.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    transactionsArray[id] = body;
+    res.json(transactionsArray[id]);
+  }); 
+
+  transactions.delete("/:id", (req, res) => {
+    const { id } = req.params; 
+    const deletedTransaction = transactionsArray.splice(id, 1);
+    res.json(deletedTransaction[0]);
+  });
+
+
 module.exports = transactions
