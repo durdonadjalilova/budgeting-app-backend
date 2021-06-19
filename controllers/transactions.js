@@ -6,7 +6,6 @@ transactions.get("/",(req, res) => {
 })
 
 transactions.get("/:id", (req, res)=>{
-    // console.log(req.params)
     const {id} = req.params
     const transaction= transactionsArray[id]
     if(transaction) {
@@ -25,14 +24,14 @@ transactions.post("/", (req, res)=>{
     // res.json(transactionsArray)
 })
 
-transactions.put("/:id", (req, res) => {
+transactions.put("/:idx", (req, res) => {
     const { id } = req.params;
     const { body } = req;
     transactionsArray[id] = body;
     res.json(transactionsArray[id]);
   }); 
 
-  transactions.delete("/:id", (req, res) => {
+  transactions.delete("/:idx", (req, res) => {
     const { id } = req.params; 
     const deletedTransaction = transactionsArray.splice(id, 1);
     res.json(deletedTransaction[0]);
