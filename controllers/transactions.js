@@ -24,14 +24,14 @@ transactions.post("/", (req, res)=>{
     // res.json(transactionsArray)
 })
 
-transactions.put("/:idx", (req, res) => {
+transactions.put("/:id", (req, res) => {
     const { id } = req.params;
     const { body } = req;
     transactionsArray[id] = body;
     res.json(transactionsArray[id]);
   }); 
 
-  transactions.delete("/:idx", (req, res) => {
+  transactions.delete("/:id", (req, res) => {
     const { id } = req.params; 
     const deletedTransaction = transactionsArray.splice(id, 1);
     res.json(deletedTransaction[0]);
