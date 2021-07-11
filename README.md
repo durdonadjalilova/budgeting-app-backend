@@ -1,4 +1,4 @@
-# budgeting-app-frontend-and-backend
+# full-stack-budgeting-app
 
 ## submission URLs
 
