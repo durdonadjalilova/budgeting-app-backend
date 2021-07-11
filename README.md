@@ -1,4 +1,4 @@
-# budgeting-app-backend
+# budgeting-app-frontend-and-backend
 
 ## submission URLs
 
